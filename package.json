@@ -1,6 +1,6 @@
 {
   "name": "sbox",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "sbox",
   "author": "dark <123189717@qq.com>",
   "main": "./package/index.js",
