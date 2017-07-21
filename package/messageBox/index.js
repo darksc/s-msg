@@ -3,18 +3,27 @@ import MessageVue from './message'
 
 let MessageConstructor = Vue.extend(MessageVue)
 
-let instance
+let currentMsg, instance
 
-let Message = (options) => {
+const MessageBox = (message, title, options) => {
   options = options || {}
+  options.title = title
+  options.message = message
   instance = new MessageConstructor({
     data: options
   })
+  instance.callback = defaultCallback
   instance.vm = instance.$mount()
   document.body.appendChild(instance.vm.$el)
   instance.vm.visible = true
   instance.dom = instance.vm.$el
-  return instance.vm
+  return new Promise((resolve, reject) => {
+    currentMsg = resolve
+  })
 }
 
-export default Message
+const defaultCallback = action => {
+  currentMsg(action)
+}
+
+export default MessageBox

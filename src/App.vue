@@ -1,6 +1,7 @@
 <template lang="pug">
   #app
-    button(v-on:click="showBox") 弹出来
+    button(v-on:click="showMsg") 弹MSG
+    button(v-on:click="showBox") 弹BOX
 </template>
 
 <script>
@@ -10,9 +11,17 @@ export default {
     this.showBox()
   },
   methods: {
-    showBox () {
+    showMsg () {
       this.$message({
         message: '我去'
+      })
+    },
+    showBox () {
+      this.$confirm('你要干什么啊？', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消'
+      }).then(res => {
+        console.log(res)
       })
     }
   }
