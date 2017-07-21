@@ -2,13 +2,13 @@
   transition(name="s-message-fade")
     .s-message-wrap(v-show="visible")
       .s-message-content
-        img(v-bind:src="imgSrc")
+        .s-message-icon(v-bind:class="imgSrc")
         .s-message-info {{message}}
 </template>
 <script>
   let types = {
-    success: 'msg_success.png',
-    error: 'msg_error.png'
+    success: 'success',
+    error: 'error'
   }
   export default {
     data () {
@@ -26,9 +26,9 @@
     computed: {
       imgSrc () {
         if (types.hasOwnProperty(this.type)) {
-          return `../../../static/image/${ types[this.type] }`
+          return `s-message-${ types[this.type] }`
         } else {
-          return `../../../static/image/${ types['success'] }`
+          return `s-message-${ types['success'] }`
         }
       }
     },
@@ -76,6 +76,14 @@
       left: 50%
       top: 50%
       transform: translate(-50%, -50%)
+      .s-message-icon
+        display: inline-block
+        width: 50px
+        height: 50px
+      .s-message-success
+        background: url('../../static/image/msg_success.png')
+      .s-message-error
+        background: url('../../static/image/msg_error.png')
       .s-message-info
         margin-top: 28px
         font: 18px "微软雅黑"

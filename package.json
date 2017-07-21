@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "sbox",
   "author": "dark <123189717@qq.com>",
-  "private": true,
   "main": "./package/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darksc/s-msg.git"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
