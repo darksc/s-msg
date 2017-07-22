@@ -1,7 +1,8 @@
 <template lang="pug">
   #app
-    button(v-on:click="showMsg") 弹MSG
-    button(v-on:click="showBox") 弹BOX
+    button(v-on:click="showMsg('操作成功', 'success')") success提示
+    button(v-on:click="showMsg('操作失败', 'error')") error提示
+    button(v-on:click="showBox") 确认框
 </template>
 
 <script>
@@ -10,10 +11,10 @@ export default {
   mounted () {
   },
   methods: {
-    showMsg () {
+    showMsg (message, type) {
       this.$message({
-        message: '我去',
-        type: 'warning'
+        message: message,
+        type: type
       })
     },
     showBox () {
