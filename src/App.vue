@@ -1,6 +1,7 @@
 <template lang="pug">
   #app
     button(v-on:click="showMsg('操作成功', 'success')") success提示
+    button(v-on:click="showMsg('操作警告', 'warning')") warning提示
     button(v-on:click="showMsg('操作失败', 'error')") error提示
     button(v-on:click="showBox") 确认框
 </template>
