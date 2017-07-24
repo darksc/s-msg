@@ -8,6 +8,7 @@
 <script>
   let types = {
     success: 'success',
+    warning: 'warning',
     error: 'error'
   }
   export default {
@@ -84,6 +85,8 @@
         background: url('../../static/image/msg_success.png')
       .s-message-error
         background: url('../../static/image/msg_error.png')
+      .s-message-warning
+        background: url('../../static/image/msg_warning.png')
       .s-message-info
         margin-top: 28px
         font: 18px "微软雅黑"

@@ -8,12 +8,12 @@
 export default {
   name: 'app',
   mounted () {
-    this.showBox()
   },
   methods: {
     showMsg () {
       this.$message({
-        message: '我去'
+        message: '我去',
+        type: 'warning'
       })
     },
     showBox () {
