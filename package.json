@@ -6,7 +6,7 @@
   "main": "./package/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darksc/s-msg.git"
+    "url": "git+https://github.com/darksc/sbox.git"
   },
   "scripts": {
     "dev": "node build/dev-server.js",
