@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import MessageVue from './message'
+import MessageBoxVue from './messageBox'
 
-let MessageConstructor = Vue.extend(MessageVue)
+let MessageConstructor = Vue.extend(MessageBoxVue)
 
 let currentMsg, instance
 
